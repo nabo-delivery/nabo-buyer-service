@@ -1,0 +1,14 @@
+version: '3'
+services:
+  postgres:
+    image: "postgres"
+    container_name: "nabo-database"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ../.docker_volume/postgres/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: nabo
+      POSTGRES_HOST_AUTH_METHOD: trust
